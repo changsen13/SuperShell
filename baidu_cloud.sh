@@ -1,7 +1,10 @@
 #!/bin/bash
 . /etc/init.d/functions
+set -euo pipefail
 shopt -s extglob
 set -e
+
+trap "Something get wrong!" ERR
 
 # change hostname & write into hosts
 function config::hostname(){
